@@ -1,0 +1,33 @@
+{% extends "MCPlatformBundle::layout.html.twig" %}
+
+{% block title %}
+Notes - {{ parent() }}
+{% endblock %}
+
+{% block mcplatform_body %}
+
+<table class="table">
+	<tr>
+		<th>Nom</th>
+		<th>Prenom</th>
+		<th>Niveau</th>
+		<th>Résultat</th>
+	</tr>
+	{% for candidat in listcandidats %}
+	<tr>
+		<td>{{ candidat.nom }}</td>
+		<td>{{ candidat.prenom }}</td>
+		<td>{{ candidat.niveau }}</td>
+		<td>{{ candidat.resultat }} / 20</td>
+	</tr>
+	{% else %}
+	<tr>
+		<td>aucun!</td>
+		<td>aucun!</td>
+		<td>aucun!</td>
+		<td>aucun!</td>
+	</tr>
+	{% endfor %}
+</table>
+
+{% endblock %}

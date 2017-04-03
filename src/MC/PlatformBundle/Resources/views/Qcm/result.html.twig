@@ -1,0 +1,18 @@
+{% extends "MCPlatformBundle::layout.html.twig" %}
+
+{% block title %}
+Résultat - {{ parent() }}
+{% endblock %}
+
+{% block mcplatform_body %}
+
+	<div class="panel panel-default">
+	  <div class="panel-body">
+	  	<h2 style='text-align:center' class="text-primary">Bonjour {{ candidat.nom }} {{ candidat.prenom }},</h2>
+	  	<h2 style='text-align:center' class="bg-warning">merci pour vos réponses, </h2>
+		<h2 style='text-align:center' class="bg-success">votre note est: {{ candidat.resultat }}/20</h2>
+		<h2 style='text-align:center' class="bg-danger">nous corrigeons ce questionnaire plus tard.</h2>
+	  </div>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "MCPlatformBundle::layout.html.twig" %}
+
+{% block title %}
+Accueil - {{ parent() }}
+{% endblock %}
+
+{% block mcplatform_body %}
+
+<form action="{{ path('mc_qcm_homepage') }}" method="post">
+	<ol>
+		{% for question in listQuestions %}
+		<li>
+			<p>{{ question.quest }} :</p>
+			{% for reponse in question.reponses %}
+			<p><input type="radio" name="{{ question.id }}" value="{{ reponse.id }}" required/> {{ reponse.rep }}</p>
+			{% endfor %}
+		</li>
+		{% else %}
+		<li>Pas (encore !) de questions</li>
+		{% endfor %}
+	</ol>
+	<p><input type="submit" name="submit" value="Valider" class="btn btn-success"></p>
+</form>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+mc_qcm_homepage:
+    path:     /
+    defaults: { _controller: MCPlatformBundle:Qcm:index }
+
+mc_qcm_candidat:
+    path:     /candidat/{result}
+    defaults: { _controller: MCPlatformBundle:Qcm:candidat }
+
+mc_qcm_result:
+    path:     /resultat/{idCandidat}
+    defaults: { _controller: MCPlatformBundle:Qcm:result }
+
+mc_qcm_notes:
+    path:     /notes
+    defaults: { _controller: MCPlatformBundle:Qcm:note }
+
+mc_equipe:
+    path:     /equipe
+    defaults: { _controller: MCPlatformBundle:Qcm:equipe }

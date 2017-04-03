@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% block title %}Projet Symfony Ingésup 2017{% endblock %}</title>
+
+  {% block stylesheets %}
+    {# On charge le CSS de bootstrap depuis le site directement #}
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  {% endblock %}
+</head>
+
+<body>
+  <div class="container">
+    <div id="header" class="jumbotron">
+      <h2 style='text-align:center' class="text-danger">Questionnaire à choix multiples</h2>
+      <p  style='text-align:center' class="text-info">
+        Ce QCM est développé avec le framework Symfony 3 dans le cadre d'un mini-projet de la majeure Web.
+      </p>
+    </div>
+
+    <div class="row">
+      <div id="aside" class="col-md-2">
+        
+      </div>
+      <div id="content" class="col-md-8">
+        {% block body %}
+        {% endblock %}
+      </div>
+    </div>
+
+    <hr>
+
+    <footer>
+      <p>Ingésup, <a href="{{ path('mc_equipe') }}">Équipe projet</a> © {{ 'now'|date('Y') }}.</p>
+    </footer>
+  </div>
+
+  {% block javascripts %}
+    {# Ajoutez ces lignes JavaScript si vous comptez vous servir des fonctionnalités du bootstrap Twitter #}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  {% endblock %}
+
+</body>
+</html>
